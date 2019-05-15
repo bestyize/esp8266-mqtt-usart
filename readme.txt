@@ -1,0 +1,3 @@
+1、已经实现了串口的发布，判断逻辑在repost_interface.c的onUsartDataReceive()函数里面处理
+2、在此串口接收数据函数上可以拓展订阅功能，接口已经写好，本次实现的订阅是在user_main.c的连接完成回调函数处订阅的。
+3、MQTT数据接收在repost_interface.c的onCloudDataReceive()函数里面实现
