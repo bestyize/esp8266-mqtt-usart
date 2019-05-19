@@ -69,7 +69,7 @@ void onCloudDataReceive(char *topic,char *cloudData)
 	}
 	else if(strstr(cloudData,CMD_RECEIVE_PWM_ADJ))
 	{
-		usartSendStr(CMD_RECEIVE_PWM_ADJ);
+		usartSendStr(cloudData);
 	}
 }
 
@@ -104,9 +104,9 @@ void onUsartDataReceive(char *usartData)
 	if(strstr(usartData,CMD_RECEIVE_PWM_STATUS)!=NULL)
 	{
 		//process usartData
-		char *message=getMessage(usartData,CMD_RECEIVE_LED_STATUS);
-		usartSendLine(message);
-		publishTopic(my_client,TOPIC_PWM_STATUS,message);
+//		char *message=getMessage(usartData,CMD_RECEIVE_LED_STATUS);
+		usartSendLine(usartData);
+		publishTopic(my_client,TOPIC_PWM_STATUS,usartData);
 	}
 
 }
