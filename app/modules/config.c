@@ -87,7 +87,7 @@ CFG_Load()
 
 		sysCfg.cfg_holder = CFG_HOLDER;
 
-		os_sprintf(sysCfg.device_id, MQTT_CLIENT_ID, system_get_chip_id());
+		os_sprintf(sysCfg.device_id, "%s_%d",MQTT_CLIENT_ID, system_get_chip_id());
 		sysCfg.device_id[sizeof(sysCfg.device_id) - 1] = '\0';
 		os_strncpy(sysCfg.sta_ssid, STA_SSID, sizeof(sysCfg.sta_ssid) - 1);
 		os_strncpy(sysCfg.sta_pwd, STA_PASS, sizeof(sysCfg.sta_pwd) - 1);
